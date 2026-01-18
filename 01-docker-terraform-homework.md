@@ -98,11 +98,11 @@ For the trips in November 2025 (lpep_pickup_datetime between '2025-11-01' and '2
 - 8,421
 
 ```yaml
-root@localhost:ny_taxi> select count(1)
-                          from green_tripdata_2025_11
-                         where lpep_pickup_datetime >= '2025-11-01' 
-                           and lpep_pickup_datetime < '2025-12-01'
-                           and trip_distance <= 1;
+root@localhost:ny_taxi> SELECT count(1)
+                          FROM green_tripdata_2025_11
+                         WHERE lpep_pickup_datetime >= '2025-11-01' 
+                           AND lpep_pickup_datetime < '2025-12-01'
+                           AND trip_distance <= 1;
 +-------+
 | count |
 |-------|
