@@ -125,7 +125,7 @@ Use the pick up time for your calculations.
 
 ```yaml
 SELECT lpep_pickup_datetime, trip_distance
- FROM green_tripdata_2025_11
+  FROM green_tripdata_2025_11
  WHERE trip_distance < 100
  ORDER BY trip_distance DESC
  LIMIT 1;
@@ -149,12 +149,12 @@ Which was the pickup zone with the largest `total_amount` (sum of all trips) on 
 
 ```yaml
 SELECT g."PULocationID", z."Zone", SUM(g."total_amount")
-FROM green_tripdata_2025_11 AS g
-JOIN taxi_zones AS z ON g."PULocationID" = z."LocationID"
-WHERE DATE(g."lpep_pickup_datetime") = '2025-11-18'
-GROUP BY g."PULocationID", z."Zone"
-ORDER BY SUM(g."total_amount") DESC
-LIMIT 1;
+  FROM green_tripdata_2025_11 AS g
+  JOIN taxi_zones AS z ON g."PULocationID" = z."LocationID"
+ WHERE DATE(g."lpep_pickup_datetime") = '2025-11-18'
+ GROUP BY g."PULocationID", z."Zone"
+ ORDER BY SUM(g."total_amount") DESC
+ LIMIT 1;
  
 +--------------+-------------------+-------------------+
 | PULocationID | Zone              | sum               |
