@@ -15,7 +15,7 @@ What's the version of `pip` in the image?
 - 23.3.1
 
 ```yaml
-Solution:
+
 docker run -it --entrypoint=bash python:3.13
 root@e61c5c68034c:/# pip --version
 pip 25.3 from /usr/local/lib/python3.13/site-packages/pip (python 3.13)
@@ -67,7 +67,7 @@ volumes:
 
 If multiple answers are correct, select any 
 ```yaml
-Solution:
+
 pgadmin and db are in the same Docker Compose network, so they communicate using each service name and their internal ports 
 
 ANSWER: db:5432
