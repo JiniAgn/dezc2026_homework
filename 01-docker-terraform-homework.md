@@ -194,6 +194,7 @@ SELECT zd."Zone", max(g.tip_amount)
 |----------------+-------|
 | Yorkville West | 81.89 |
 +----------------+-------+
+
 ANSWER: Yorkville West
 ```
 
