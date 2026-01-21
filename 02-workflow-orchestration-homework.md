@@ -10,7 +10,8 @@ Complete the quiz shown below. It's a set of 6 multiple-choice questions to test
 - 364.7 MiB
 - 692.6 MiB
 
-<img src="images/2w_kestra_hw_Q1.png" style="width:50%;" />
+<img src="images/2w_kestra_hw_Q1.png" style="width:50%;" /> </img>
+
 ```yaml
 ANSWER: 128.3 MiB
 ```
