@@ -14,7 +14,7 @@ What's the version of `pip` in the image?
 - 24.2.1
 - 23.3.1
 
-```yaml
+```
 
 docker run -it --entrypoint=bash python:3.13
 root@e61c5c68034c:/# pip --version
