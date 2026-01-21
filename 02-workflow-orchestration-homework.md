@@ -10,8 +10,7 @@ Complete the quiz shown below. It's a set of 6 multiple-choice questions to test
 - 364.7 MiB
 - 692.6 MiB
 
-![kestra_hw_Q1](images/2w_kestra_hw_Q1.png)
-*Figure 1: How I solved Q1 using Kestra.
+<img src="images/2w_kestra_hw_Q1.png" style="width:50%;" />
 ```yaml
 ANSWER: 128.3 MiB
 ```
@@ -42,6 +41,27 @@ ANSWER: `green_tripdata_2020-04.csv`
 - 936,199
 - 1,734,051
 - 1,342,034
+
+```yaml
+select EXTRACT(YEAR FROM lpep_pickup_datetime), count(*) from green_tripdata 
+group by 1
+order by 1 asc;
+
+2008	20
+2009	121
+2010	55
+2018	67
+2019	6043796
+2020	1734038
+2021	1
+2035	1
+2041	1
+2062	1
+
+The 2020 Green Taxi data has 1,734,038 pickups, and the closest value among the options is 1,734,051.
+
+ANSWER: 1,734,051 
+```
 
 5) How many rows are there for the `Yellow` Taxi data for the March 2021 CSV file?
 - 1,428,092
