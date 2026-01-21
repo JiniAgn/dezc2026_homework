@@ -15,7 +15,7 @@ What's the version of `pip` in the image?
 - 23.3.1
 
 ```yaml
-Solution:
+
 docker run -it --entrypoint=bash python:3.13
 root@e61c5c68034c:/# pip --version
 pip 25.3 from /usr/local/lib/python3.13/site-packages/pip (python 3.13)
@@ -66,8 +66,9 @@ volumes:
 - db:5432
 
 If multiple answers are correct, select any 
+
 ```yaml
-Solution:
+
 pgadmin and db are in the same Docker Compose network, so they communicate using each service name and their internal ports 
 
 ANSWER: db:5432
@@ -96,6 +97,20 @@ For the trips in November 2025 (lpep_pickup_datetime between '2025-11-01' and '2
 - 8,254
 - 8,421
 
+```yaml
+root@localhost:ny_taxi> SELECT count(1)
+                          FROM green_tripdata_2025_11
+                         WHERE lpep_pickup_datetime >= '2025-11-01' 
+                           AND lpep_pickup_datetime < '2025-12-01'
+                           AND trip_distance <= 1;
++-------+
+| count |
+|-------|
+| 8007  |
++-------+
+
+ANSWER: 8,007
+```
 
 ## Question 4. Longest trip for each day
 
@@ -108,6 +123,20 @@ Use the pick up time for your calculations.
 - 2025-11-23
 - 2025-11-25
 
+```yaml
+SELECT lpep_pickup_datetime, trip_distance
+  FROM green_tripdata_2025_11
+ WHERE trip_distance < 100
+ ORDER BY trip_distance DESC
+ LIMIT 1;
++----------------------+---------------+
+| lpep_pickup_datetime | trip_distance |
+|----------------------+---------------|
+| 2025-11-14 15:36:27  | 88.03         |
++----------------------+---------------+
+
+ANSWER: 2025-11-14
+```
 
 ## Question 5. Biggest pickup zone
 
@@ -118,6 +147,23 @@ Which was the pickup zone with the largest `total_amount` (sum of all trips) on 
 - Morningside Heights
 - Forest Hills
 
+```yaml
+SELECT g."PULocationID", z."Zone", SUM(g."total_amount")
+  FROM green_tripdata_2025_11 AS g
+  JOIN taxi_zones AS z ON g."PULocationID" = z."LocationID"
+ WHERE DATE(g."lpep_pickup_datetime") = '2025-11-18'
+ GROUP BY g."PULocationID", z."Zone"
+ ORDER BY SUM(g."total_amount") DESC
+ LIMIT 1;
+ 
++--------------+-------------------+-------------------+
+| PULocationID | Zone              | sum               |
+|--------------+-------------------+-------------------|
+| 74           | East Harlem North | 9281.920000000004 |
++--------------+-------------------+-------------------+
+
+ANSWER: East Harlem North
+```
 
 ## Question 6. Largest tip
 
@@ -130,6 +176,27 @@ Note: it's `tip` , not `trip`. We need the name of the zone, not the ID.
 - East Harlem North
 - LaGuardia Airport
 
+```yaml
+SELECT zd."Zone", max(g.tip_amount)
+   FROM green_tripdata_2025_11 AS g
+   JOIN taxi_zones AS zd
+     ON g."DOLocationID" = zd."LocationID"
+   JOIN taxi_zones AS zp
+     ON g."PULocationID" = zp."LocationID"
+  WHERE g.lpep_pickup_datetime >= '2025-11-01' 
+    AND g.lpep_pickup_datetime < '2025-12-01'
+    AND zp."Zone" = 'East Harlem North'
+  GROUP BY zd."Zone"
+  ORDER BY max(g.tip_amount) DESC 
+  LIMIT 1;
++----------------+-------+
+| Zone           | max   |
+|----------------+-------|
+| Yorkville West | 81.89 |
++----------------+-------+
+
+ANSWER: Yorkville West
+```
 
 ## Terraform
 
@@ -155,6 +222,10 @@ Answers:
 - terraform init, terraform run -auto-approve, terraform destroy
 - terraform init, terraform apply -auto-approve, terraform destroy
 - terraform import, terraform apply -y, terraform rm
+
+```yaml
+ANSWER : terraform init, terraform apply -auto-approve, terraform destroy
+```
 
 
 
