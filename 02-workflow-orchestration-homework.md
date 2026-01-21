@@ -29,7 +29,7 @@ Complete the quiz shown below. It's a set of 6 multiple-choice questions to test
 
 file: "{{inputs.taxi}}_tripdata_{{inputs.year}}-{{inputs.month}}.csv"
 ↓
-render(file) # 
+render(file) # a function used to evaluate and process Pebble templating expressions within workflow definitions
 
 ANSWER: `green_tripdata_2020-04.csv`
 ```
