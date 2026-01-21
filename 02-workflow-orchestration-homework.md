@@ -10,9 +10,9 @@ Complete the quiz shown below. It's a set of 6 multiple-choice questions to test
 - 364.7 MiB
 - 692.6 MiB
 
+![kestra_hw_Q1](images/2w_kestra_hw_Q1.png)
+*Figure 1: How I solved Q1 using Kestra.
 ```yaml
-![How I get this answer](images/2w_kestra_hw_Q1.png)
-
 ANSWER: 128.3 MiB
 ```
 
