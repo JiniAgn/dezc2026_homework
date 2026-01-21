@@ -13,6 +13,8 @@ Complete the quiz shown below. It's a set of 6 multiple-choice questions to test
 <img src="images/2w_kestra_hw_Q1.png" style="width:50%;" /> </img>
 
 ```yaml
+To solve the task, I executed <a href="[02-workflow-orchestration/flows/04_postgres_taxi.yaml](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/02-workflow-orchestration/flows/04_postgres_taxi.yaml)">'04_postgres_taxi.yaml'</a> with input('yellow', '2020', '12').
+
 ANSWER: 128.3 MiB
 ```
 
@@ -69,6 +71,25 @@ ANSWER: 1,734,051
 - 706,911
 - 1,925,152
 - 2,561,031
+
+```yaml
+After truncating the yellow_tripdata table in pgAdmin due to memory issues,
+I added "2021" as a year option in 04_postgres_taxi.yaml:
+
+- id: year
+    type: SELECT
+    displayName: Select year
+    values: ["2019", "2020", "2021"]
+    defaults: "2019"
+
+Then, I executed the workflow with 'yellow', '2021', '3'
+and verified in pgAdmin:
+
+select count(*) from yellow_tripdata;
+1925152
+
+ANSWER: 1,925,152
+```
 
 6) How would you configure the timezone to New York in a Schedule trigger?
 - Add a `timezone` property set to `EST` in the `Schedule` trigger configuration  
