@@ -11,7 +11,7 @@ Complete the quiz shown below. It's a set of 6 multiple-choice questions to test
 - 692.6 MiB
 
 ```yaml
-![How I get this answer](./images/2w_kestra_hw_Q1.png)
+![How I get this answer](images/2w_kestra_hw_Q1.png)
 
 ANSWER: 128.3 MiB
 ```
