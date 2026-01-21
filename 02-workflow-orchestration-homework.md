@@ -12,9 +12,9 @@ Complete the quiz shown below. It's a set of 6 multiple-choice questions to test
 
 <img src="images/2w_kestra_hw_Q1.png" style="width:50%;" /> </img>
 
-```yaml
-To solve the task, I executed <a href="[02-workflow-orchestration/flows/04_postgres_taxi.yaml](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/02-workflow-orchestration/flows/04_postgres_taxi.yaml)">'04_postgres_taxi.yaml'</a> with input('yellow', '2020', '12').
 
+To solve the task, I executed <a href="[02-workflow-orchestration/flows/04_postgres_taxi.yaml](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/02-workflow-orchestration/flows/04_postgres_taxi.yaml)">'04_postgres_taxi.yaml'</a> with input('yellow', '2020', '12').
+```yaml
 ANSWER: 128.3 MiB
 ```
 
