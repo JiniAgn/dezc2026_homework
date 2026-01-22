@@ -39,6 +39,31 @@ ANSWER: `green_tripdata_2020-04.csv`
 - 18,324,219
 - 29,430,127
 
+```yaml
+SELECT count(*) cnt_rows
+  FROM `ny-rides-zoomcamp-xxxxxx.2w_kestra_demo_dezc_2026_bq.yellow_tripdata`
+ WHERE tpep_pickup_datetime >= '2020-01-01 00:00:00'
+   AND tpep_pickup_datetime < '2021-01-01 00:00:00';
+
+the result may not fully match the condition “all CSV files in the year 2020” if the table contains data from both 2019 and 2020.
+
+This is because filtering only by tpep_pickup_datetime selects rows based on the pickup timestamp, not based on which CSV files were loaded.
+As a result, rows originating from CSV files outside of 2020 may still be included.
+
+Therefore, to strictly satisfy the condition “all CSV files in the year 2020”, the SQL query is written using the 'filename' as a filtering condition.
+(For clarity, please refer to the solution steps for Question 4.)
+
+SELECT count(*) cnt_rows
+  FROM `ny-rides-zoomcamp-xxxxxx.2w_kestra_demo_dezc_2026_bq.yellow_tripdata`
+ WHERE filename LIKE 'yellow_tripdata_2020%';
+
+cnt_rows
+24648499
+
+ANSWER: 24,648,499
+```
+
+
 4) How many rows are there for the `Green` Taxi data for all CSV files in the year 2020?
 - 5,327,301
 - 936,199
