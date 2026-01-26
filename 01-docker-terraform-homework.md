@@ -69,7 +69,8 @@ If multiple answers are correct, select any
 
 ```yaml
 
-pgadmin and db are in the same Docker Compose network, so they communicate using each service name and their internal ports 
+pgadmin and db are in the same Docker Compose network, so they communicate using each service name
+and their internal ports 
 
 ANSWER: db:5432
 ```
@@ -225,7 +226,8 @@ Answers:
 
 ```yaml
 To get the answer, I referred to the 'Execution steps' section in 1_terraform_overview.md.
-(https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/01-docker-terraform/terraform/1_terraform_overview.md)
+(https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/01-docker-terraform/
+terraform/1_terraform_overview.md)
 
 ANSWER : terraform init, terraform apply -auto-approve, terraform destroy
 ```
