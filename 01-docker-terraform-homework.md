@@ -224,6 +224,9 @@ Answers:
 - terraform import, terraform apply -y, terraform rm
 
 ```yaml
+To get the answer, I referred to the 'Execution steps' section in 1_terraform_overview.md.
+(https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/01-docker-terraform/terraform/1_terraform_overview.md)
+
 ANSWER : terraform init, terraform apply -auto-approve, terraform destroy
 ```
 
