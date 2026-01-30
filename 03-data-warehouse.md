@@ -79,10 +79,10 @@ What is the best strategy to make an optimized table in Big Query if your query 
 - Partition by tpep_dropoff_datetime and Partition by VendorID
 
 ```yaml
-CREATE OR REPLACE TABLE ny-rides-zoomcamp-476900.ny_rides_zoomcamp_476900_bq_dataset.2024_yellow_tripdata_par_clu
+CREATE OR REPLACE TABLE ny-rides-zoomcamp-xxxxxx.ny_rides_zoomcamp_xxxxxx_bq_dataset.2024_yellow_tripdata_par_clu
 PARTITION BY DATE(tpep_dropoff_datetime)
 CLUSTER BY VendorID AS
-SELECT * FROM ny-rides-zoomcamp-476900.ny_rides_zoomcamp_476900_bq_dataset.2024_ext_yellow_tripdata;
+SELECT * FROM ny-rides-zoomcamp-xxxxxx.ny_rides_zoomcamp_xxxxxx_bq_dataset.2024_ext_yellow_tripdata;
 
 ANSWER: Partition by tpep_dropoff_datetime and Cluster on VendorID
 ```
