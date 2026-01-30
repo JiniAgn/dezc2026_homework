@@ -4,7 +4,6 @@
 <br><b> UPLOAD THE PARQUET FILES:</b> </br>
 <br>I uploaded the Parquet files from the New York City Taxi Trip Records (January–June 2024) to my GCS bucket using a [shell script](./upload_yellow_taxi_2024_for_hw.sh). </br>
 <img src="images/3w-show-parquets-gcsbucket.png" style="width:50%;" /> </img>
-<br><u>NOTE:</u> You will need to use the PARQUET option files when creating an External Table</br>
 
 <br><b>BIG QUERY SETUP:</b></br>
 <br>Create an external table using the Yellow Taxi Trip Records. </br>
